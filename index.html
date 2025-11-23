@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="title" id="title">間違い探し</h1>
+    <div class="info">
+        <p>同じ顔が並ぶ中に、1つだけ違う顔があるよ。</p>
+        <p>30秒以内にできるだけたくさん当ててね！</p>
+    </div>
+    <div class="status">
+        クリア<span id="clear">0</span>回
+        時間<span id="sec">30</span>秒
+    </div>
+    <ul class="list">
+        <li class="cell1">☺️</li>
+        <li class="cell2">☺️</li>
+        <li class="cell3">☺️</li>
+        <li class="cell4">☺️</li>
+        <li class="cell5">☺️</li>
+        <li class="cell6">☺️</li>
+        <li class="cell7">☺️</li>
+        <li class="cell8">☺️</li>
+        <li class="cell9">☺️</li>
+    </ul>
+
+    <button id="start">start</button>
+    <script>
+
+    let clear = 0;             
+    let timeLeft = 30;  
+    const $clear = $("#clear");
+    const $sec = $("#sec");
+    const $list = $(".list");
+    const $start = $("#start");
+
+    // chatさんからのコピー　揺れる 
+    function shakeScreen() {
+        $("body").addClass("shake");
+        setTimeout(function(){
+             $("body").removeClass("shake");}, 300);
+            }
+
+    let r = Math.floor(Math.random() * 9)+1;
+    if(r==1){
+        $(".cell1").text("😉");
+    }else if (r==2){
+        $(".cell2").text("😉");
+    }else if (r==3){
+        $(".cell3").text("😉");
+    }else if (r==4){
+        $(".cell4").text("😉");
+    }else if (r==5){
+        $(".cell5").text("😉");
+    }else if (r==6){
+        $(".cell6").text("😉");
+    }else if (r==7){
+        $(".cell7").text("😉");
+    }else if (r==8){
+        $(".cell8").text("😉");
+    }else{ $(".cell9").text("😉");}
+
+$(".cell1").on("click", function () {
+      if (r == 1) { 
+        clear++; 
+        $clear.text(clear);
+        r = Math.floor(Math.random() * 9)+1;}
+      else { shakeScreen();}
+    });
+$(".cell2").on("click", function () {
+      if (r == 2) { 
+        clear++; 
+        $clear.text(clear);
+        r = Math.floor(Math.random() * 9)+1;}
+      else { shakeScreen();}
+    });
+$(".cell3").on("click", function () {
+      if (r == 3) { 
+        clear++; 
+        $clear.text(clear);
+        }
+      else { shakeScreen();}
+    });
+$(".cell4").on("click", function () {
+      if (r == 4) { 
+        clear++; 
+        $clear.text(clear);}
+      else { shakeScreen();}
+    });
+$(".cell5").on("click", function () {
+      if (r == 5) { 
+        clear++; 
+        $clear.text(clear);}
+      else { shakeScreen();}
+    });
+$(".cell6").on("click", function () {
+      if (r == 6) { 
+        clear++; 
+        $clear.text(clear);}
+      else { shakeScreen();}
+    });
+$(".cell7").on("click", function () {
+      if (r == 7) { 
+        clear++; 
+        $clear.text(clear);}
+      else { shakeScreen();}
+    });
+$(".cell8").on("click", function () {
+      if (r == 8) { 
+        clear++; 
+        $clear.text(clear);}
+      else { shakeScreen();}
+    });
+$(".cell9").on("click", function () {
+      if (r == 9) { 
+        clear++; 
+        $clear.text(clear);}
+      else { shakeScreen();}
+    });
+    </script>
+</body>
+</html>

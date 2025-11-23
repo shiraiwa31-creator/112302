@@ -1,0 +1,16 @@
+body{
+    background-color: antiquewhite;
+}
+
+.list {
+  grid-template-rows: repeat(3, auto);
+}
+
+@keyframes shake-horizontal {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-10px); }
+  40%  { transform: translateX(8px); }
+  60%  { transform: translateX(-6px); }
+  80%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
